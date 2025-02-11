@@ -26,8 +26,12 @@ public class Main {
                     System.out.println("Лучший результат: " + (isFirstGame ? "еще нет" : bestScore));
                     continue;
                 }
-
-                userNumber = Integer.parseInt(input);
+                try {
+                    userNumber = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    System.out.println("Введите число от 1 до 100 или команду RESULT");
+                    continue;
+                }
 
                 attempts++;
 
